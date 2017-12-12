@@ -43,7 +43,7 @@ void Update()
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
-            score += 1;         // スコアの加算
+            score += 100;         // スコアの加算 (実装　HW16A033 大和田滉恵)
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
     }
@@ -67,9 +67,9 @@ void Update()
     // ターゲットの描画
     FillRect(targetRect, Color::red);
 
-    // スコアの描画
-    SetFont("nicoca_v1.ttf", 20.0f);
-    DrawText(FormatString("%02d", score), Vector2(-319, 199), Color::black);
-    DrawText(FormatString("%02d", score), Vector2(-320, 200), Color::white);
+    // スコアの描画 (実装　HW16A033 大和田滉恵)
+    SetFont("nicoca_v1.ttf", 80.0f);
+    DrawText(FormatString("%05d", score), Vector2(-319, 179), Color::black);
+    DrawText(FormatString("%05d", score), Vector2(-320, 180), Color::white);
 }
 
