@@ -54,6 +54,12 @@ void Update()
 
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
+    
+    //雲の移動（実装：　HW16A077 小西敦也）
+    cloudPos.x += 50 * Time::deltaTime;
+    if (cloudPos.x > 310){
+        cloudPos.x = -600;
+    }
 
     // 弾の描画
     if (bulletPos.x > -999) {
@@ -72,4 +78,3 @@ void Update()
     DrawText(FormatString("%02d", score), Vector2(-319, 199), Color::black);
     DrawText(FormatString("%02d", score), Vector2(-320, 200), Color::white);
 }
-
